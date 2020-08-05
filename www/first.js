@@ -3,7 +3,7 @@ window.onload = () => {
     document.getElementsByTagName("iframe")[0].contentWindow.postMessage('hello from first window', '*')
   }
   document.getElementById('first_btn2').onclick = () => {
-    window.appWindow.postMessage('hello from first window', window.appWindow.origin)
+    window.appWindow.postMessage('hello from first window', '*')
   }
   window.addEventListener("message", function(event) {
     window.appWindow = event.source

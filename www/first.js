@@ -8,6 +8,9 @@ window.onload = () => {
   window.addEventListener("message", function(event) {
     window.appWindow = event.source
     document.getElementById('result').innerHTML = 'message: [first window]=>' + event.data;
-    // event.source.postMessage("Hello back!");
+    setTimeout(function(){
+      document.getElementById('result').innerHTML = 'test!';
+      window.appWindow.postMessage("Hello back from first window!!!");
+    }, 1000);
   });
 }
